@@ -1,10 +1,9 @@
 const puppeteer = require('puppeteer');
 
-puppeteer.launch().then(async browser => {
+puppeteer.launch({headless:false}).then(async browser => {
     const page = await browser.newPage();
-    await page.goto('https://google.com');
+    await page.goto('http://automationpractice.com/');
 
-    // Get the "viewport" of the page, as reported by the page.
     const dimensions = await page.evaluate(() => {
         return {
             width: document.documentElement.clientWidth,

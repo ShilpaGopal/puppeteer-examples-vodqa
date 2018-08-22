@@ -9,6 +9,6 @@
   "author": "Shilpa G",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^1.6.0"
+    "puppeteer": "^1.7.0"
   }
 }
