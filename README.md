@@ -1,9 +1,9 @@
 # Useful Puppeteer examples
 
 
-##Execution
+## Execution
 
-Assuming you have clone the repo and node installed. Navigate to the root folder of the repo and run
+Assuming you have cloned the repo and node installed. Navigate to the root folder of the repo and run
 
 ```sh
     $ npm i
