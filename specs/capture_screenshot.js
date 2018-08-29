@@ -6,3 +6,5 @@ puppeteer.launch().then(async browser => {
     await page.screenshot({path: './screenshots/homePage.png'});
     await browser.close();
 });
+
+

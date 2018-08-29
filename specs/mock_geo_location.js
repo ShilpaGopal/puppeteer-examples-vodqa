@@ -2,8 +2,8 @@ const puppeteer = require('puppeteer');
 const executablePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 puppeteer.launch({
-    headless: true,
-    executablePath: executablePath}).then(async browser => {
+    headless: false,
+    executablePath}).then(async browser => {
     const page = await browser.newPage();
     await page.setViewport({width: 1600, height: 900});
 

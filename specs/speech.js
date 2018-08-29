@@ -1,12 +1,12 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs')
 const DEFAULT_TXT = 'Hello, Thanks for joining us in vodqa 2018. Bye until we meet next year';
-//const executablePath = '/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\ Chrome\\ Canary';
+const executablePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 (async() => {
 
     const browser = await puppeteer.launch({
-        //executablePath: executablePath,
+        executablePath,
         headless: false, // Speech synth API doesn't work in headless.
         args: [
             '--window-size=0,0', // Launch baby window for fun.
