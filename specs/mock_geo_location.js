@@ -1,9 +1,23 @@
 const puppeteer = require('puppeteer');
-const executablePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+
+const escapeXpathString = str => {
+    const splitedQuotes = str.replace(/'/g, `', "'", '`);
+    return `concat('${splitedQuotes}', '')`;
+};
+
+const clickByText = async (page, text) => {
+    const escapedText = escapeXpathString(text);
+    const linkHandlers = await page.$x(`//a[contains(text(), ${escapedText})]`);
+
+    if (linkHandlers.length > 0) {
+        await linkHandlers[0].click();
+    } else {
+        throw new Error(`Link not found: ${text}`);
+    }
+};
 
 puppeteer.launch({
-    headless: false,
-    executablePath}).then(async browser => {
+    headless: false}).then(async browser => {
     const page = await browser.newPage();
     await page.setViewport({width: 1600, height: 900});
 
@@ -45,6 +59,9 @@ puppeteer.launch({
     await page.goto('https://the-internet.herokuapp.com/geolocation')
     await page.waitForSelector('button')
     await page.click('button')
+    await page.waitFor(2000)
+    await clickByText(page, `See it on Google`);
+    await page.waitForNavigation({waitUntil: 'load'});
     await page.waitFor(4000)
     await page.screenshot({
         path: './screenshots/fake_location.png',
