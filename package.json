@@ -9,7 +9,7 @@
   "author": "Shilpa G",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "1.4.0",
+    "puppeteer": "1.13.0",
     "lighthouse": "3.0.3",
     "ws": "^5.1.1",
     "request-promise": "*",
