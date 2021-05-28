@@ -11,7 +11,7 @@
   "dependencies": {
     "puppeteer": "1.13.0",
     "lighthouse": "3.0.3",
-    "ws": "^5.1.1",
+    "ws": "^7.4.5",
     "request-promise": "*",
     "request": "*",
     "path": "*",
